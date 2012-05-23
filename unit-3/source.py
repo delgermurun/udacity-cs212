@@ -18,7 +18,7 @@ def match(pattern, text):
     remainders = matchset(pattern, text)
     if remainders:
         shortest = min(remainders, key=len)
-        return text[:text.find(shortest)] if shortest else text
+        return text[:len(text)-len(shortest)]
     
 def components(pattern):
     "Return the op, x, and y arguments; x and y are None if missing."
